@@ -11,7 +11,7 @@ function MyInput() {
     <div>
       <input
         type="text"
-        onChange={(e) => textHandler.updateText(e.target.value)}
+        onChange={(e) => textHandler.handleUpdateText(e.target.value)}
       />
       <p>{textHandler.text}</p>
     </div>
@@ -37,7 +37,7 @@ function App(props) {
   return (
     <div>
       {/* step3 : 컨텍스트 제공하기 */}
-      <TextContext.Provider value={{ text, updateText: handleUpdateText }}>
+      <TextContext.Provider value={{ text, handleUpdateText }}>
         <MyInput />
         <MyText />
       </TextContext.Provider>
